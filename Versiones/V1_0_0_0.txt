@@ -1,0 +1,4 @@
+Estequiometria V1.0.0.0
+Herramienta para calcular relacion esteqiometrica de reacciones de poliuretano, epoxi y poliaspárticos.
+Primera versión totalmente funcional con base de datos en Local.
+Tras ubicar la base de datos en un servidor, cambiar la ruta de acceso en Datos/Conexion.vb
