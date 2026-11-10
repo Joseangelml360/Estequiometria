@@ -32,14 +32,14 @@ Partial Class FrmTiposPropiedad
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtCodigo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.BtnTodos = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.BtnAñadir = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DgvPropiedades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -129,6 +129,30 @@ Partial Class FrmTiposPropiedad
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Código"
         '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.Image = Global.Estequiometria.My.Resources.Resources.Cancelar
+        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCancelar.Location = New System.Drawing.Point(651, 10)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(102, 30)
+        Me.BtnCancelar.TabIndex = 4
+        Me.BtnCancelar.Text = "Cancelar "
+        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnCancelar.UseVisualStyleBackColor = True
+        '
+        'BtnGuardar
+        '
+        Me.BtnGuardar.Image = Global.Estequiometria.My.Resources.Resources.disk
+        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnGuardar.Location = New System.Drawing.Point(651, 70)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(102, 30)
+        Me.BtnGuardar.TabIndex = 5
+        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnGuardar.UseVisualStyleBackColor = True
+        '
         'TxtBuscar
         '
         Me.TxtBuscar.Location = New System.Drawing.Point(403, 68)
@@ -193,30 +217,6 @@ Partial Class FrmTiposPropiedad
         Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnSalir.UseVisualStyleBackColor = True
         '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.Image = Global.Estequiometria.My.Resources.Resources.Cancelar
-        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCancelar.Location = New System.Drawing.Point(651, 10)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(102, 30)
-        Me.BtnCancelar.TabIndex = 4
-        Me.BtnCancelar.Text = "Cancelar "
-        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnCancelar.UseVisualStyleBackColor = True
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.Image = Global.Estequiometria.My.Resources.Resources.disk
-        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardar.Location = New System.Drawing.Point(651, 70)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(102, 30)
-        Me.BtnGuardar.TabIndex = 5
-        Me.BtnGuardar.Text = "Guardar"
-        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnGuardar.UseVisualStyleBackColor = True
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Estequiometria.My.Resources.Resources.GEARS_ico
@@ -244,6 +244,7 @@ Partial Class FrmTiposPropiedad
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmTiposPropiedad"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Propiedades"
         CType(Me.DgvPropiedades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

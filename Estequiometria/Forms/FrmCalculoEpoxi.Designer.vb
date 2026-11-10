@@ -58,6 +58,8 @@ Partial Class FrmCalculoEpoxi
         Me.BtnAutomatico = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnVolver = New System.Windows.Forms.Button()
+        Me.BtnLimpiar = New System.Windows.Forms.Button()
         CType(Me.DgvCalculo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpResultados.SuspendLayout()
         Me.GrpRelacion.SuspendLayout()
@@ -421,11 +423,37 @@ Partial Class FrmCalculoEpoxi
         Me.PictureBox1.TabIndex = 22
         Me.PictureBox1.TabStop = False
         '
+        'BtnVolver
+        '
+        Me.BtnVolver.Image = Global.Estequiometria.My.Resources.Resources.undo16
+        Me.BtnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnVolver.Location = New System.Drawing.Point(729, 316)
+        Me.BtnVolver.Name = "BtnVolver"
+        Me.BtnVolver.Size = New System.Drawing.Size(90, 30)
+        Me.BtnVolver.TabIndex = 27
+        Me.BtnVolver.Text = "Volver"
+        Me.BtnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnVolver.UseVisualStyleBackColor = True
+        '
+        'BtnLimpiar
+        '
+        Me.BtnLimpiar.Image = Global.Estequiometria.My.Resources.Resources.Controller
+        Me.BtnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnLimpiar.Location = New System.Drawing.Point(825, 307)
+        Me.BtnLimpiar.Name = "BtnLimpiar"
+        Me.BtnLimpiar.Size = New System.Drawing.Size(104, 48)
+        Me.BtnLimpiar.TabIndex = 26
+        Me.BtnLimpiar.Text = "Introducir " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "valores"
+        Me.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnLimpiar.UseVisualStyleBackColor = True
+        '
         'FrmCalculoEpoxi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1082, 653)
+        Me.Controls.Add(Me.BtnVolver)
+        Me.Controls.Add(Me.BtnLimpiar)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.BtnCalcular)
@@ -439,6 +467,7 @@ Partial Class FrmCalculoEpoxi
         Me.Controls.Add(Me.GrpParteA)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmCalculoEpoxi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmCalculoEpoxi"
         CType(Me.DgvCalculo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpResultados.ResumeLayout(False)
@@ -492,4 +521,6 @@ Partial Class FrmCalculoEpoxi
     Friend WithEvents LblEqOH As Label
     Friend WithEvents LblFormulaA As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents BtnVolver As Button
+    Friend WithEvents BtnLimpiar As Button
 End Class

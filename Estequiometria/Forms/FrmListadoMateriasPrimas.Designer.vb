@@ -92,6 +92,7 @@ Partial Class FrmListadoMateriasPrimas
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "FrmListadoMateriasPrimas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado Materias primas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

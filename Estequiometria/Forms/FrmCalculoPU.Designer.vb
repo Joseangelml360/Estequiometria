@@ -54,10 +54,12 @@ Partial Class FrmCalculoPU
         Me.DgvCalculo = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.BtnVolver = New System.Windows.Forms.Button()
+        Me.BtnLimpiar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.BtnCalcular = New System.Windows.Forms.Button()
         Me.BtnAutomatico = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GrpParteA.SuspendLayout()
         Me.GrpParteB.SuspendLayout()
         Me.GrpRelacion.SuspendLayout()
@@ -310,7 +312,7 @@ Partial Class FrmCalculoPU
         'TxtEqNCOTotal
         '
         Me.TxtEqNCOTotal.BackColor = System.Drawing.Color.LightYellow
-        Me.TxtEqNCOTotal.Location = New System.Drawing.Point(358, 28)
+        Me.TxtEqNCOTotal.Location = New System.Drawing.Point(336, 28)
         Me.TxtEqNCOTotal.Name = "TxtEqNCOTotal"
         Me.TxtEqNCOTotal.ReadOnly = True
         Me.TxtEqNCOTotal.Size = New System.Drawing.Size(100, 22)
@@ -320,7 +322,7 @@ Partial Class FrmCalculoPU
         'LblEqNCOTotal
         '
         Me.LblEqNCOTotal.AutoSize = True
-        Me.LblEqNCOTotal.Location = New System.Drawing.Point(305, 33)
+        Me.LblEqNCOTotal.Location = New System.Drawing.Point(283, 33)
         Me.LblEqNCOTotal.Name = "LblEqNCOTotal"
         Me.LblEqNCOTotal.Size = New System.Drawing.Size(55, 17)
         Me.LblEqNCOTotal.TabIndex = 2
@@ -374,6 +376,40 @@ Partial Class FrmCalculoPU
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Cálculo Poliuretanos"
         '
+        'BtnVolver
+        '
+        Me.BtnVolver.Image = Global.Estequiometria.My.Resources.Resources.undo16
+        Me.BtnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnVolver.Location = New System.Drawing.Point(731, 305)
+        Me.BtnVolver.Name = "BtnVolver"
+        Me.BtnVolver.Size = New System.Drawing.Size(90, 30)
+        Me.BtnVolver.TabIndex = 25
+        Me.BtnVolver.Text = "Volver"
+        Me.BtnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnVolver.UseVisualStyleBackColor = True
+        '
+        'BtnLimpiar
+        '
+        Me.BtnLimpiar.Image = Global.Estequiometria.My.Resources.Resources.Controller
+        Me.BtnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnLimpiar.Location = New System.Drawing.Point(827, 296)
+        Me.BtnLimpiar.Name = "BtnLimpiar"
+        Me.BtnLimpiar.Size = New System.Drawing.Size(104, 48)
+        Me.BtnLimpiar.TabIndex = 24
+        Me.BtnLimpiar.Text = "Introducir " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "valores"
+        Me.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnLimpiar.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Estequiometria.My.Resources.Resources.Reacción
+        Me.PictureBox1.Location = New System.Drawing.Point(370, -4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(49, 46)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 23
+        Me.PictureBox1.TabStop = False
+        '
         'BtnSalir
         '
         Me.BtnSalir.Image = Global.Estequiometria.My.Resources.Resources.Salir
@@ -410,21 +446,13 @@ Partial Class FrmCalculoPU
         Me.BtnAutomatico.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnAutomatico.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Estequiometria.My.Resources.Resources.Reacción
-        Me.PictureBox1.Location = New System.Drawing.Point(370, -4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(49, 46)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 23
-        Me.PictureBox1.TabStop = False
-        '
         'FrmCalculoPU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1082, 653)
+        Me.Controls.Add(Me.BtnVolver)
+        Me.Controls.Add(Me.BtnLimpiar)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.BtnCalcular)
@@ -438,6 +466,7 @@ Partial Class FrmCalculoPU
         Me.Controls.Add(Me.GrpParteA)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmCalculoPU"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmCalculoPU"
         Me.GrpParteA.ResumeLayout(False)
         Me.GrpParteA.PerformLayout()
@@ -491,4 +520,6 @@ Partial Class FrmCalculoPU
     Friend WithEvents BtnCalcular As Button
     Friend WithEvents BtnSalir As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents BtnLimpiar As Button
+    Friend WithEvents BtnVolver As Button
 End Class

@@ -8,6 +8,9 @@ Public Class FrmCalculoEpoxi
     Private EqEpoxiFormulaA As Decimal
     Private EqAminaFormulaB As Decimal
     Private Sub FrmCalculoEpoxi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.BtnVolver.Visible = False
+        Me.Height = 600
         CargarFormulas()
     End Sub
 
@@ -62,8 +65,16 @@ Public Class FrmCalculoEpoxi
         Dim ExcesoNCO As Decimal
         Dim IndiceNCO As Decimal
 
-        If CboFormulaA.SelectedValue Is Nothing Then Exit Sub
-        If CboFormulaB.SelectedValue Is Nothing Then Exit Sub
+        If Me.TxtEqEpoxi.ReadOnly Then
+            If CboFormulaA.SelectedValue Is Nothing Then Exit Sub
+            If CboFormulaB.SelectedValue Is Nothing Then Exit Sub
+
+        End If
+
+        If Me.TxtEqEpoxi.ReadOnly = False Then
+            If Me.TxtEqEpoxi.Text Is Nothing Then Exit Sub
+            If Me.TxtEqAmina.Text Is Nothing Then Exit Sub
+        End If
 
         EqEpoxiTotal = EqEpoxiFormulaA * NumParteA.Value / 100D
 
@@ -85,47 +96,52 @@ Public Class FrmCalculoEpoxi
 
         TxtExcesoNCO.Text = ExcesoNCO.ToString("N2") & " %"
 
-        Dim dtDetalle As DataTable =
-    CalculosEntidad.TablaDetalleCalculoEstequiometrico()
+        If Me.TxtEqEpoxi.ReadOnly Then
 
-        Dim dtA As DataTable =
-    calculos.ObtenerDetalleCalculoEstequiometrico(
-        CInt(CboFormulaA.SelectedValue),
-        "A")
+            Dim dtDetalle As DataTable = CalculosEntidad.TablaDetalleCalculoEstequiometrico()
 
-        Dim dtB As DataTable =
-    calculos.ObtenerDetalleCalculoEstequiometrico(
-        CInt(CboFormulaB.SelectedValue),
-        "B")
+            Dim dtA As DataTable = calculos.ObtenerDetalleCalculoEstequiometrico(CInt(CboFormulaA.SelectedValue), "A")
 
-        For Each fila As DataRow In dtA.Rows
-            dtDetalle.ImportRow(fila)
-        Next
+            Dim dtB As DataTable = calculos.ObtenerDetalleCalculoEstequiometrico(CInt(CboFormulaB.SelectedValue), "B")
 
-        For Each fila As DataRow In dtB.Rows
-            dtDetalle.ImportRow(fila)
-        Next
+            For Each fila As DataRow In dtA.Rows
+                dtDetalle.ImportRow(fila)
+            Next
 
-        DgvCalculo.DataSource = Nothing
-        DgvCalculo.DataSource = dtDetalle
+            For Each fila As DataRow In dtB.Rows
+                dtDetalle.ImportRow(fila)
+            Next
 
-        With DgvCalculo
+            DgvCalculo.DataSource = Nothing
+            DgvCalculo.DataSource = dtDetalle
 
-            .Columns("MateriaPrima").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            With DgvCalculo
 
-            .Columns("Cantidad").DefaultCellStyle.Format = "N3"
+                .Columns("MateriaPrima").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
 
-            .Columns("Valor").DefaultCellStyle.Format = "N3"
+                .Columns("Cantidad").DefaultCellStyle.Format = "N3"
 
-            .Columns("Equivalentes").DefaultCellStyle.Format = "N5"
+                .Columns("Valor").DefaultCellStyle.Format = "N3"
 
-        End With
+                .Columns("Equivalentes").DefaultCellStyle.Format = "N5"
+
+            End With
+
+        End If
 
     End Sub
 
     Private Sub BtnAutomatico_Click(sender As Object, e As EventArgs) Handles BtnAutomatico.Click
-        If EqEpoxiFormulaA = 0 Then Exit Sub
-        If EqAminaFormulaB = 0 Then Exit Sub
+
+        If Me.TxtEqEpoxi.ReadOnly Then
+            If EqEpoxiFormulaA = 0 Then Exit Sub
+            If EqAminaFormulaB = 0 Then Exit Sub
+        End If
+
+        If Me.TxtEqEpoxi.ReadOnly = False Then
+            If Me.TxtEqEpoxi.Text Is Nothing Then Exit Sub
+            If Me.TxtEqAmina.Text Is Nothing Then Exit Sub
+        End If
 
         NumParteA.Value = 100D
 
@@ -146,4 +162,57 @@ Public Class FrmCalculoEpoxi
     Private Sub CboFormulaB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboFormulaB.SelectedIndexChanged
         TxtDescripcionB.Text = CboFormulaB.Text
     End Sub
+
+    Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
+
+        Me.BtnVolver.Visible = True
+        Me.BtnLimpiar.Visible = False
+        Me.DgvCalculo.Visible = False
+        Me.Height = 400
+        Me.TxtEqEpoxi.ReadOnly = False
+        Me.TxtEqAmina.ReadOnly = False
+        Me.CboFormulaA.SelectedIndex = -1
+        Me.CboFormulaA.Enabled = False
+        Me.CboFormulaB.SelectedIndex = -1
+        Me.CboFormulaB.Enabled = False
+        Me.TxtDescripcionA.Clear()
+        Me.TxtDescripcionB.Clear()
+        Me.TxtEqEpoxi.Clear()
+        Me.TxtEqAmina.Clear()
+        Me.TxtEqEpoxiTotal.Clear()
+        Me.TxtEqAminaTotal.Clear()
+        Me.TxtIndiceNCO.Clear()
+        Me.TxtExcesoNCO.Clear()
+
+    End Sub
+
+    Private Sub TxtEqEpoxi_TextChanged(sender As Object, e As EventArgs) Handles TxtEqEpoxi.TextChanged
+        EqEpoxiFormulaA = CDec(Val(Me.TxtEqEpoxi.Text))
+    End Sub
+
+    Private Sub TxtEqAmina_TextChanged(sender As Object, e As EventArgs) Handles TxtEqAmina.TextChanged
+        EqAminaFormulaB = CDec(Val(Me.TxtEqAmina.Text))
+    End Sub
+
+    Private Sub BtnVolver_Click(sender As Object, e As EventArgs) Handles BtnVolver.Click
+
+        Me.BtnVolver.Visible = False
+        Me.BtnLimpiar.Visible = True
+        Me.DgvCalculo.Visible = True
+        Me.Height = 600
+        Me.TxtEqAmina.ReadOnly = True
+        Me.TxtEqEpoxi.ReadOnly = True
+        Me.CboFormulaA.Enabled = True
+        Me.CboFormulaB.Enabled = True
+        Me.TxtDescripcionA.Clear()
+        Me.TxtDescripcionB.Clear()
+        Me.TxtEqEpoxi.Clear()
+        Me.TxtEqAmina.Clear()
+        Me.TxtEqEpoxiTotal.Clear()
+        Me.TxtEqAminaTotal.Clear()
+        Me.TxtIndiceNCO.Clear()
+        Me.TxtExcesoNCO.Clear()
+
+    End Sub
+
 End Class

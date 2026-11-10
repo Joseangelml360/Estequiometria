@@ -34,6 +34,8 @@ Partial Class FrmPropiedadesMateriaPrima
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtCodigoMateriaPrima = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.CboMateriaPrima = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtBuscarMP = New System.Windows.Forms.TextBox()
@@ -44,8 +46,6 @@ Partial Class FrmPropiedadesMateriaPrima
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.BtnAñadir = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
         CType(Me.DgvPropiedades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,6 +157,30 @@ Partial Class FrmPropiedadesMateriaPrima
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Codigo Materia prima"
         '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.Image = Global.Estequiometria.My.Resources.Resources.Cancelar
+        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCancelar.Location = New System.Drawing.Point(662, 10)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.BtnCancelar.TabIndex = 6
+        Me.BtnCancelar.Text = "Cancelar"
+        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnCancelar.UseVisualStyleBackColor = True
+        '
+        'BtnGuardar
+        '
+        Me.BtnGuardar.Image = Global.Estequiometria.My.Resources.Resources.disk
+        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnGuardar.Location = New System.Drawing.Point(662, 50)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(100, 30)
+        Me.BtnGuardar.TabIndex = 5
+        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnGuardar.UseVisualStyleBackColor = True
+        '
         'CboMateriaPrima
         '
         Me.CboMateriaPrima.FormattingEnabled = True
@@ -259,30 +283,6 @@ Partial Class FrmPropiedadesMateriaPrima
         Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnSalir.UseVisualStyleBackColor = True
         '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.Image = Global.Estequiometria.My.Resources.Resources.Cancelar
-        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCancelar.Location = New System.Drawing.Point(662, 10)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(100, 30)
-        Me.BtnCancelar.TabIndex = 6
-        Me.BtnCancelar.Text = "Cancelar"
-        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnCancelar.UseVisualStyleBackColor = True
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.Image = Global.Estequiometria.My.Resources.Resources.disk
-        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardar.Location = New System.Drawing.Point(662, 50)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(100, 30)
-        Me.BtnGuardar.TabIndex = 5
-        Me.BtnGuardar.Text = "Guardar"
-        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnGuardar.UseVisualStyleBackColor = True
-        '
         'FrmPropiedadesMateriaPrima
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -302,6 +302,7 @@ Partial Class FrmPropiedadesMateriaPrima
         Me.Controls.Add(Me.DgvPropiedades)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPropiedadesMateriaPrima"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmPropiedadesMateriaPrima"
         CType(Me.DgvPropiedades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

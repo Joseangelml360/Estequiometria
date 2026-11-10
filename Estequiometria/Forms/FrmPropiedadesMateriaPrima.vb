@@ -94,6 +94,12 @@ Public Class FrmPropiedadesMateriaPrima
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+
+        If DgvPropiedades.CurrentRow Is Nothing OrElse DgvPropiedades.RowCount = 0 Then
+            MsgBox("Debe elegir una propiedad", MsgBoxStyle.Information)
+            Exit Sub
+        End If
+
         Me.Height = 500
         Me.Panel1.Visible = True
         Añadir = False

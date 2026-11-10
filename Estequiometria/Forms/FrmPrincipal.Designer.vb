@@ -265,6 +265,7 @@ Partial Class FrmPrincipal
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FrmPrincipal"
         Me.HelpProvider1.SetShowHelp(Me, True)
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Estequiometria de poliuretanos, Epoxi y Poliaspárticos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)

@@ -118,7 +118,12 @@ Public Class FrmMateriaPrima
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
-        If DgvMateriasPrimas.CurrentRow Is Nothing Then Exit Sub
+
+        If DgvMateriasPrimas.RowCount = 0 OrElse DgvMateriasPrimas.CurrentRow Is Nothing Then
+            MsgBox("Debe seleccionar una materia prima", MsgBoxStyle.Information)
+            Exit Sub
+        End If
+
         Añadir = False
         ModoEdicion()
 
@@ -253,6 +258,12 @@ Public Class FrmMateriaPrima
     End Sub
 
     Private Sub BtnPropiedades_Click(sender As Object, e As EventArgs) Handles BtnPropiedades.Click
+
+        If DgvMateriasPrimas.RowCount = 0 OrElse DgvMateriasPrimas.CurrentRow Is Nothing Then
+            MsgBox("Debe seleccionar una materia prima", MsgBoxStyle.Information)
+            Exit Sub
+        End If
+
         Dim codigo As String = Me.DgvMateriasPrimas.CurrentRow.Cells("Codigo").Value.ToString
         Dim descripcion As String = Me.DgvMateriasPrimas.CurrentRow.Cells("Descripcion").Value.ToString
 

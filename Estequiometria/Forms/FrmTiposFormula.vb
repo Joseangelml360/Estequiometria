@@ -65,6 +65,12 @@ Public Class FrmTiposFormula
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+
+        If DgvTiposFormula.CurrentRow Is Nothing OrElse DgvTiposFormula.RowCount = 0 Then
+            MsgBox("Debe elegir un tipo de fórmula", MsgBoxStyle.MsgBoxSetForeground.Information)
+            Exit Sub
+        End If
+
         Añadir = True
         Me.Height = 520
         Me.Panel1.Visible = True

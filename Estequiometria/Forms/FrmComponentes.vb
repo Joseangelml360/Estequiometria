@@ -215,7 +215,10 @@ Public Class FrmComponentes
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
 
-        If DgvComponentes.CurrentRow Is Nothing Then Exit Sub
+        If DgvComponentes.CurrentRow Is Nothing OrElse DgvComponentes.RowCount = 0 Then
+            MsgBox("Debe elegir un componente")
+            Exit Sub
+        End If
 
         Añadir = False
 

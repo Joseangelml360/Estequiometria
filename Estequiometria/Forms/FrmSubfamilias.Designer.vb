@@ -266,6 +266,7 @@ Partial Class FrmSubfamilias
         Me.Controls.Add(Me.DgvSubFamilias)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmSubfamilias"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Subfamilias"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

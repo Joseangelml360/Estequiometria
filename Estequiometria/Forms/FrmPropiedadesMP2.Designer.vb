@@ -296,6 +296,7 @@ Partial Class FrmPropiedadesMP2
         Me.Controls.Add(Me.DgvPropiedades)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmPropiedadesMP2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmPropiedadesMP2"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

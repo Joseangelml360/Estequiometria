@@ -59,7 +59,12 @@ Public Class FrmTiposPropiedad
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
-        If DgvPropiedades.CurrentRow Is Nothing Then Exit Sub
+
+        If DgvPropiedades.CurrentRow Is Nothing OrElse DgvPropiedades.RowCount = 0 Then
+            MsgBox("Debe elegir una propiedad")
+            Exit Sub
+        End If
+
         Añadir = False
         ModoEdicion()
 

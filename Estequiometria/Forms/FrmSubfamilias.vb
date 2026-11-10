@@ -81,12 +81,18 @@ Public Class FrmSubfamilias
     End Sub
 
     Private Sub Editar_Click(sender As Object, e As EventArgs) Handles Editar.Click
+
+        If DgvSubFamilias.CurrentRow Is Nothing OrElse DgvSubFamilias.RowCount = 0 Then
+            MsgBox("Debe elegir una sub familia", MsgBoxStyle.Information)
+            Exit Sub
+        End If
+
         Me.Height = 500
         Me.TxtCodigo.Text = DgvSubFamilias.CurrentRow.Cells("Codigo").Value.ToString
         Me.TxtDescripcion.Text = DgvSubFamilias.CurrentRow.Cells("Descripcion").Value.ToString
         Me.TxtId.Text = DgvSubFamilias.CurrentRow.Cells("IdSubFamilia").Value
         Me.CboFamilia.Text = DgvSubFamilias.CurrentRow.Cells("CodigoFamilia").Value.ToString
-        Me.LblCboFamilia.visible = False
+        Me.LblCboFamilia.Visible = False
         Me.CboFamilia.Visible = False
         Añadir = 0
         HayCambios = True

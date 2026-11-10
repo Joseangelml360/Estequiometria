@@ -243,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="molecular.ico" />
+    <None Include="Resources\Controller.png" />
     <None Include="Resources\SubFamilias.jpg" />
     <None Include="Resources\Tipos.jpg" />
     <None Include="Resources\Propiedades1.png" />

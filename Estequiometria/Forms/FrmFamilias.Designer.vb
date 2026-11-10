@@ -280,6 +280,7 @@ Partial Class FrmFamilias
         Me.Controls.Add(Me.Label5)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmFamilias"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Familias"
         CType(Me.DgvFamilias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

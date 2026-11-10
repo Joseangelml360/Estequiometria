@@ -80,6 +80,14 @@ Public Class FrmFamilias
     End Sub
 
     Private Sub Editar_Click(sender As Object, e As EventArgs) Handles Editar.Click
+
+        If DgvFamilias.RowCount = 0 OrElse DgvFamilias.CurrentRow Is Nothing Then
+
+            MsgBox("Debes seleccionar una familia", MsgBoxStyle.Information)
+            Exit Sub
+
+        End If
+
         Me.Height = 500
         Me.TxtCodigo.Text = DgvFamilias.CurrentRow.Cells("Codigo").Value.ToString
         Me.TxtDescripcion.Text = DgvFamilias.CurrentRow.Cells("Descripcion").Value.ToString
@@ -132,10 +140,13 @@ Public Class FrmFamilias
 
     Private Sub BtnVerSubFam_Click(sender As Object, e As EventArgs) Handles BtnVerSubFam.Click
 
-        If DgvFamilias.RowCount = 0 Then
+        If DgvFamilias.RowCount = 0 OrElse DgvFamilias.CurrentRow Is Nothing Then
+
             MsgBox("Debes seleccionar una familia", MsgBoxStyle.Information)
             Exit Sub
+
         End If
+
 
         Dim fam As String = DgvFamilias.CurrentRow.Cells("Codigo").Value.ToString
         daSubfamilia = negociosubfamilia.ObtenerSubfamiliasPorFamilia(fam)

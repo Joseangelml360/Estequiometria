@@ -81,7 +81,10 @@ Public Class FrmFormulas
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
 
-        If DgvFormulas.CurrentRow Is Nothing Then Exit Sub
+        If DgvFormulas.CurrentRow Is Nothing OrElse DgvFormulas.RowCount = 0 Then
+            MsgBox("Debe elegir una fórmula")
+            Exit Sub
+        End If
 
         Añadir = False
         Me.Height = 500
@@ -174,7 +177,10 @@ Public Class FrmFormulas
 
     Private Sub BtnComponentes_Click(sender As Object, e As EventArgs) Handles BtnComponentes.Click
 
-        If DgvFormulas.CurrentRow Is Nothing Then Exit Sub
+        If DgvFormulas.CurrentRow Is Nothing OrElse DgvFormulas.RowCount = 0 Then
+            MsgBox("Debe elegir una fórmula")
+            Exit Sub
+        End If
 
         With DgvFormulas.CurrentRow
             IdFormula = CInt(.Cells("IdFormula").Value)

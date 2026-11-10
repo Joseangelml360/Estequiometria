@@ -29,18 +29,18 @@ Partial Class FrmTiposFormula
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtId = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtCodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.DgvTiposFormula = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BtnTodos = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.BtnAñadir = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
@@ -109,6 +109,18 @@ Partial Class FrmTiposFormula
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Id"
         '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.Image = Global.Estequiometria.My.Resources.Resources.Cancelar
+        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCancelar.Location = New System.Drawing.Point(661, 9)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.BtnCancelar.TabIndex = 4
+        Me.BtnCancelar.Text = "Cancelar"
+        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnCancelar.UseVisualStyleBackColor = True
+        '
         'TxtDescripcion
         '
         Me.TxtDescripcion.Location = New System.Drawing.Point(99, 57)
@@ -140,6 +152,18 @@ Partial Class FrmTiposFormula
         Me.Label1.Size = New System.Drawing.Size(52, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código"
+        '
+        'BtnGuardar
+        '
+        Me.BtnGuardar.Image = Global.Estequiometria.My.Resources.Resources.disk
+        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnGuardar.Location = New System.Drawing.Point(661, 90)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(100, 30)
+        Me.BtnGuardar.TabIndex = 1
+        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'DgvTiposFormula
         '
@@ -199,30 +223,6 @@ Partial Class FrmTiposFormula
         Me.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.Image = Global.Estequiometria.My.Resources.Resources.Cancelar
-        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCancelar.Location = New System.Drawing.Point(661, 9)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(100, 30)
-        Me.BtnCancelar.TabIndex = 4
-        Me.BtnCancelar.Text = "Cancelar"
-        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnCancelar.UseVisualStyleBackColor = True
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.Image = Global.Estequiometria.My.Resources.Resources.disk
-        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardar.Location = New System.Drawing.Point(661, 90)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(100, 30)
-        Me.BtnGuardar.TabIndex = 1
-        Me.BtnGuardar.Text = "Guardar"
-        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnGuardar.UseVisualStyleBackColor = True
-        '
         'BtnEditar
         '
         Me.BtnEditar.Image = Global.Estequiometria.My.Resources.Resources.Modificar
@@ -277,6 +277,7 @@ Partial Class FrmTiposFormula
         Me.Controls.Add(Me.DgvTiposFormula)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmTiposFormula"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmTiposFormula"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
