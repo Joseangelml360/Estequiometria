@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99E278A7-A0CB-481D-9B19-0A2C82B7EFB3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Estequiometria.My.MyApplication</StartupObject>
+    <RootNamespace>Estequiometria</RootNamespace>
+    <AssemblyName>Estequiometria</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Estequiometria.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Estequiometria.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>molecular.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCalculoEpoxi.Designer.vb">
+      <DependentUpon>FrmCalculoEpoxi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCalculoEpoxi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCalculoPoliaspartico.Designer.vb">
+      <DependentUpon>FrmCalculoPoliaspartico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCalculoPoliaspartico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCalculoPU.Designer.vb">
+      <DependentUpon>FrmCalculoPU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCalculoPU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmComponentes.Designer.vb">
+      <DependentUpon>FrmComponentes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmComponentes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFamilias.Designer.vb">
+      <DependentUpon>FrmFamilias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFamilias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFormulas.Designer.vb">
+      <DependentUpon>FrmFormulas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFormulas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmListadoMateriasPrimas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmListadoMateriasPrimas.Designer.vb">
+      <DependentUpon>FrmListadoMateriasPrimas.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMateriaPrima.Designer.vb">
+      <DependentUpon>FrmMateriaPrima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMateriaPrima.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPropiedadesMateriaPrima.Designer.vb">
+      <DependentUpon>FrmPropiedadesMateriaPrima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPropiedadesMateriaPrima.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPropiedadesMP2.Designer.vb">
+      <DependentUpon>FrmPropiedadesMP2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPropiedadesMP2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSubfamilias.Designer.vb">
+      <DependentUpon>FrmSubfamilias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSubfamilias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTiposFormula.Designer.vb">
+      <DependentUpon>FrmTiposFormula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTiposFormula.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTiposPropiedad.Designer.vb">
+      <DependentUpon>FrmTiposPropiedad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTiposPropiedad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UtilidadesModulo.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCalculoEpoxi.resx">
+      <DependentUpon>FrmCalculoEpoxi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCalculoPoliaspartico.resx">
+      <DependentUpon>FrmCalculoPoliaspartico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCalculoPU.resx">
+      <DependentUpon>FrmCalculoPU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmComponentes.resx">
+      <DependentUpon>FrmComponentes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFamilias.resx">
+      <DependentUpon>FrmFamilias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFormulas.resx">
+      <DependentUpon>FrmFormulas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmListadoMateriasPrimas.resx">
+      <DependentUpon>FrmListadoMateriasPrimas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMateriaPrima.resx">
+      <DependentUpon>FrmMateriaPrima.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPropiedadesMateriaPrima.resx">
+      <DependentUpon>FrmPropiedadesMateriaPrima.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPropiedadesMP2.resx">
+      <DependentUpon>FrmPropiedadesMP2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSubfamilias.resx">
+      <DependentUpon>FrmSubfamilias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTiposFormula.resx">
+      <DependentUpon>FrmTiposFormula.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTiposPropiedad.resx">
+      <DependentUpon>FrmTiposPropiedad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="molecular.ico" />
+    <None Include="Resources\SubFamilias.jpg" />
+    <None Include="Resources\Tipos.jpg" />
+    <None Include="Resources\Propiedades1.png" />
+    <None Include="Resources\MateriasPrimas.jpg" />
+    <None Include="Resources\matraz.png" />
+    <None Include="Resources\Familias.jpg" />
+    <None Include="Resources\molecula_edited.jpg" />
+    <None Include="Resources\Reacción.png" />
+    <None Include="Resources\Epoxi A+B.jpg" />
+    <None Include="Resources\Epoxi A+B.png" />
+    <None Include="Resources\engranajes.gif" />
+    <None Include="Resources\GEARS.ico.jpg" />
+    <None Include="Resources\Propiedades.png" />
+    <None Include="My Project\app.manifest" />
+    <None Include="Resources\molecular.png" />
+    <None Include=".editorconfig" />
+    <Content Include="Ayuda\ManualEstequiometria.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Añadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modificar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filtro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.vbproj">
+      <Project>{1543d188-05ea-4f39-96fc-bdeb7a0f2d41}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.vbproj">
+      <Project>{2b438b5a-4597-4186-ba8f-22a9a7a4d6ae}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.vbproj">
+      <Project>{752b0231-82eb-4f2a-89aa-29a4c4a618f0}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alta.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DocumentoAzul.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceder.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculadora.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luzverde.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limpiar.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
